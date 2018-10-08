@@ -1,3 +1,5 @@
+@import "docs-dropdown.scss";
+
 * {
     font-family: Lato;
     font-weight: 300;
@@ -13,6 +15,8 @@
         .navbar {
             background: rgba(0, 0, 0, .4);
             padding: 10px 15px;
+            -webkit-perspective: 2000px;
+            perspective: 2000px;
             .navbar-nav {
                 padding: 5px 0px;
 
@@ -24,6 +28,10 @@
                     margin: 0 10px;
                     padding: 10px 0px;
                     text-transform: capitalize;
+
+                    &:hover{
+                        color: #B2B7C0;
+                    }
                 }
 
                 &>.hero>a {
@@ -31,6 +39,9 @@
                     font-weight: 400;
                     padding: 10px 15px;
                     text-transform: uppercase;
+                    &:hover{
+                        color: white;
+                    }
                 }
             }
             .navbar-brand { 
@@ -39,7 +50,7 @@
                 letter-spacing: -0.76px;
                 font-size: 26px;
 
-                img {
+                svg {
                     margin-right: 9px;
                 }
             }
@@ -59,6 +70,9 @@
         background-color: #da602d;
         padding: 8px 25px;
         text-transform: uppercase;
+        &:hover, &:active {
+            background-color: #b45127;
+        }
     }
 
     #global-footer {
@@ -120,12 +134,25 @@
                 float: none !important; 
             }
             .logo-presentation + .buffalo-video {
+                display: inline-block;
                 margin-top: 15px;
-                &:hover { text-decoration: none; }
-                &:focus { outline: none; }
-                span {
-                    margin-left: 5px;
+                .another-circle {
+                    stroke-dasharray: 100;
+                    stroke-dashoffset: 100;
+                    transition: all .5s linear;
+                    stroke: white;
                 }
+                
+                &:hover { 
+                    text-decoration: none; 
+
+                    .another-circle {
+                        stroke-dashoffset: 0;
+                    }
+                }
+                &:focus { outline: none; }
+                span { margin-left: 5px; }
+                svg { vertical-align: middle; }
             }
         }
 
@@ -153,6 +180,28 @@
             text-transform: uppercase;
             color: white;
             padding: 5px 20px;
+            position: relative;
+            text-decoration: none;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                bottom: 5px;
+                left: 0px;
+                background-color: #fff;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all .3s ease-in-out 0s;
+            }
+
+            &:hover {
+                &:before {
+                    visibility: visible;
+                    transform: scaleX(0.85);
+                }
+            }
         }
 
         h2 {
@@ -183,7 +232,7 @@
         position: relative;
         margin-bottom: 20px;
 
-        img {
+        svg {
             display: block;
             margin: 0 auto;
             margin-bottom: 20px;
@@ -244,12 +293,25 @@
         }
     }
 
+    .feature-fr {
+        height: 430px;
+    }
+
     .main-features {
         margin-top: -40px;
         background-color: #F3F5F7;
         position: relative;
 
-        .docs-link:hover { text-decoration: none !important; }
+        .docs-link h4{
+            transition: .2s ease;
+        }
+
+        .docs-link:hover { 
+            text-decoration: none !important; 
+            h4 {
+                color: #b45127;
+            }
+        }
 
         .get-started-btn a {
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
@@ -356,20 +418,14 @@
         #platinum-sponsors {
             .logo {margin-bottom: 20px;}
             
-            img {
+            svg {
                 width: 80%;
                 margin-bottom: 10px;
-                &.img-circle {
+                &.svg-circle {
                     border: 3px dashed #3D8BDF;
                     padding: 40px;
                 }
             }
-        }
-    }
-
-    .main-features.fr {
-        .feature {
-            height: 420px;
         }
     }
 
@@ -378,13 +434,13 @@
         .tumbleweed {
             position: absolute;
             top: 0;
-            img {
+            svg {
                 position: absolute;
             }
         }
         .tumbleweed-left { 
             left: 0;
-            img {
+            svg {
                 &:nth-child(1) {
                     top: 110px;
                     left: -50px;
@@ -402,7 +458,7 @@
         }
         .tumbleweed-right { 
             right: 0;
-            img {
+            svg {
                 &:nth-child(1) {
                     top: 90px;
                     right: 30px;
@@ -415,7 +471,7 @@
             }
         }
         .tumbleweed-left, .tumbleweed-right {
-            img{
+            svg{
                 &:last-child {
                     width: 65px;
                 }
@@ -452,8 +508,6 @@
         .blog-entry {
             height: auto;
         }
-
-
 
         .feature {
             height: auto;
