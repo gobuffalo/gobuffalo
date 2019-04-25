@@ -72,17 +72,13 @@
                 <article class="main-content" role="main">
                     <%= partial("partials/docs_header.html") %>
 
-                    <div class="docs-content">
-                        <%= yield %>
-                    </div>
+                    <%= yield %>
 
                     <%= partial("partials/feedback_footer.html") %>
                 </article>
                 <!-- END Main content -->
             </div>
-            <%= partial("partials/footer.html") %>
         </main>
-
 
         <!-- Scripts -->
         <%= javascriptTag("application.js") %>

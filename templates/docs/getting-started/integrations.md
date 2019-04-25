@@ -1,7 +1,9 @@
 <% seoDescription("Tooling Integration") %>
 <% seoKeywords(["tooling", "ide", "integration", "buffalo", "bash", "zsh"]) %>
 
-<%= h1("Tooling Integration") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Tooling Integration"}) %>
+<% } %>
 
 You can work with Buffalo using your preferred tools. Here is a list of contributed integrations for shells, IDEs and other tools.
 
@@ -15,4 +17,4 @@ If you use `bash` shell, you can try this script, created by [@cippaciong](https
 
 ## Next Steps
 
-* [Generate a New Project](/en/docs/new-project) - Create your first Buffalo project!
+* [Generate a New Project](/en/docs/getting-started/new-project) - Create your first Buffalo project!

@@ -1,7 +1,9 @@
 <% seoDescription("Buffalo project directory structure") %>
 <% seoKeywords(["buffalo", "go", "golang", "structure", "directory", "framework", "web"]) %>
 
-<%= h1("Directory structure") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Directory structure"}) %>
+<% } %>
 
 Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the [generators](/docs/generators) to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 
@@ -106,4 +108,4 @@ This file bootstraps your app and starts it.
 
 ## Next Steps
 
-* [Configuration](/en/docs/config-vars) - Manage your app configuration.
+* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.

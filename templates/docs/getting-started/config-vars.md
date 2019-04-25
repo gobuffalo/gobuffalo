@@ -1,7 +1,9 @@
 <% seoDescription("Handle configuration with Buffalo") %>
 <% seoKeywords(["buffalo", "go", "golang", "configuration", "env", "framework", "web"]) %>
 
-<%= h1("Configuration") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Configuration"}) %>
+<% } %>
 
 In this chapter, you'll learn how to manage configuration with Buffalo.
 

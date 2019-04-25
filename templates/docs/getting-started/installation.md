@@ -1,7 +1,20 @@
 <% seoDescription("How to install the Buffalo framework") %>
 <% seoKeywords(["buffalo", "go", "golang", "installation", "framework", "web", "mac", "windows", "linux"]) %>
 
-<%= h1("Install Buffalo") %>
+<div>
+  <% contentFor("docsLanding") { %>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="landing-info">
+        <h1 class="landing-title">Buffalo Docs</h1>
+        <p>Welcome to the Buffalo Docs, you can always contribute to this documentation it is a great, and easy, way to help make Buffalo better.</p>
+        <a href="#" class="btn btn-buffalo cap">Contribute</a>
+      </div>
+      <div class="landing-logo-wrapper">
+        <img src="/assets/images/logo_med.png" alt="buffalo" />
+      </div>
+    </div>
+  <% } %>
+</div>
 
 In this chapter, you'll learn how to install Buffalo, either from pre-built binaries or from source.
 
@@ -56,9 +69,9 @@ $ sudo mv buffalo /usr/local/bin/buffalo
 ```bash
 $ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
-$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+$ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
-$ mv buffalo-no-sqlite ~/bin/buffalo
+$ mv buffalo ~/bin/buffalo
 ```
 
 ## Scoop (Windows)
@@ -154,5 +167,5 @@ If you have a similar output, your Buffalo toolbox is ready to work!
 
 ## Next Steps
 
-* [Tooling Integration](/en/docs/integrations) - Work with Buffalo, using existing tools.
-* [Generate a New Project](/en/docs/new-project) - Create your first Buffalo project!
+* [Tooling Integration](/en/docs/getting-started/integrations) - Work with Buffalo, using existing tools.
+* [Generate a New Project](/en/docs/getting-started/new-project) - Create your first Buffalo project!
